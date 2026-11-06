@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | NadaVeena Carnatic Music Academy</title>
+  <meta name="description" content="Contact NadaVeena: academy address, phone and email, and an enquiry form for Carnatic Vocal and Veena classes.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="dist/css/styles.css">
+  <script src="src/js/preinit.js"></script>
+  <script type="module" src="src/js/main.js"></script>
+</head>
+<body>
+  <div data-component="header"></div>
+
+  <main id="main">
+
+    <!-- 1. HERO: copy beside a photograph -->
+    <section class="page-hero hero-glow" aria-labelledby="contact-title">
+      <div class="page-hero-inner lg:grid-cols-[1fr_1.1fr]">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Contact</li></ol></nav>
+          <div class="hero-copy">
+            <span class="eyebrow">Contact</span>
+            <h1 id="contact-title">Come and say hello.</h1>
+            <p class="lead max-w-prose">Visit the academy, call us, or send an enquiry. We will help you choose between vocal and veena and find the right batch.</p>
+            <div class="btn-group">
+              <a class="btn btn-primary" href="#enquiry">Send an Enquiry</a>
+              <a class="btn btn-secondary" href="#contact-info">Address and Phone</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-photo-card">
+          <div class="media-frame"><img src="assets/images/photos/contact-hero-temple.jpg" alt="A wide stone path leading through a temple complex in Tamil Nadu, with trees and tiled-roof buildings" width="1600" height="1200" fetchpriority="high" style="object-position:50% 60%"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. CONTACT INFORMATION: address, phone, email -->
+    <section class="section scroll-mt-20" id="contact-info" aria-labelledby="info-title">
+      <div class="container-page">
+        <div class="section-heading">
+          <span class="eyebrow">Contact information</span>
+          <h2 id="info-title">Find us, call us, write to us</h2>
+          <p class="lead">Everything you need to reach the academy, in one place.</p>
+        </div>
+        <div class="grid items-start gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
+          <figure class="mx-auto w-full max-w-sm lg:max-w-none">
+            <div class="media-frame" data-ratio="portrait"><img src="assets/images/photos/contact-mylapore.jpg" alt="The colourful gopuram of a temple in Mylapore, Chennai, rising above a street of shops" width="1000" height="1778" loading="lazy" decoding="async" style="object-position:50% 25%"></div>
+          </figure>
+          <div class="flex flex-col gap-8">
+            <div class="address-panel">
+              <div class="flex items-start gap-4">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-eyebrow font-body font-bold uppercase text-accent" style="letter-spacing:.18em">Academy address</h3>
+                  <p class="font-bold" data-contact="name"></p>
+                  <address data-contact="address"></address>
+                </div>
+              </div>
+            </div>
+            <div class="grid gap-x-8 md:grid-cols-2">
+              <div class="info-row">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+                <div><h3>Phone</h3><a href="tel:" data-contact="phone"></a></div>
+              </div>
+              <div class="info-row">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                <div><h3>Email</h3><a class="break-all" href="mailto:" data-contact="email"></a></div>
+              </div>
+              <div class="info-row md:col-span-2">
+                <span class="info-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                <div><h3>Timings</h3><p class="text-muted" data-contact="hours"></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MAP: built from the same address as Contact Information (src/js/config/contact.js) -->
+    <section class="section section-alt scroll-mt-20" id="map" aria-labelledby="map-title">
+      <div class="container-page">
+        <div class="mb-8 flex flex-col items-start justify-between gap-6 md:mb-10 md:flex-row md:items-end">
+          <div class="section-heading !mb-0">
+            <span class="eyebrow">Location</span>
+            <h2 id="map-title">Find the academy</h2>
+            <p class="lead"><span data-contact="address-inline"></span></p>
+          </div>
+          <a class="btn btn-primary shrink-0" data-directions href="#" target="_blank" rel="noopener noreferrer">Get Directions</a>
+        </div>
+        <div class="map-frame">
+          <iframe data-map title="Map showing the academy address" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ENQUIRY FORM (frontend only) -->
+    <section class="section scroll-mt-20" id="enquiry" aria-labelledby="enquiry-title">
+      <div class="container-page grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <div class="flex flex-col items-start gap-5">
+          <span class="eyebrow">Enquiry</span>
+          <h2 id="enquiry-title">Send us an enquiry</h2>
+          <p class="lead">Tell us which course you are interested in. We will reply with current batches, timings and fees.</p>
+          <h3 class="mt-4 text-h5">What happens next</h3>
+          <ol class="step-list w-full">
+            <li><span>We read your enquiry and the course you chose.</span></li>
+            <li><span>We suggest a suitable batch and teacher.</span></li>
+            <li><span>You attend a trial class before you decide.</span></li>
+          </ol>
+        </div>
+
+        <div class="form-card" data-form-wrap>
+          <form data-enquiry-form novalidate aria-labelledby="enquiry-title">
+            <div class="grid gap-5 md:grid-cols-2">
+              <div class="field">
+                <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="f-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-invalid="false" aria-describedby="f-name-err" placeholder="Your name">
+                <p class="field-error" id="f-name-err" data-error hidden></p>
+              </div>
+              <div class="field">
+                <label for="f-email">Email address <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" dir="ltr" required aria-required="true" aria-invalid="false" aria-describedby="f-email-err" placeholder="name@example.com">
+                <p class="field-error" id="f-email-err" data-error hidden></p>
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone number <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" dir="ltr" required aria-required="true" aria-invalid="false" aria-describedby="f-phone-err" placeholder="10-digit mobile number">
+                <p class="field-error" id="f-phone-err" data-error hidden></p>
+              </div>
+              <div class="field">
+                <label for="f-course">Course <span class="req" aria-hidden="true">*</span></label>
+                <select class="input" id="f-course" name="course" required aria-required="true" aria-invalid="false" aria-describedby="f-course-err">
+                  <option value="">Choose a course</option>
+                  <option value="vocal">Carnatic Vocal</option>
+                  <option value="veena">Veena</option>
+                </select>
+                <p class="field-error" id="f-course-err" data-error hidden></p>
+              </div>
+              <div class="field md:col-span-2">
+                <label for="f-message">Message <span class="req" aria-hidden="true">*</span></label>
+                <textarea class="input" id="f-message" name="message" rows="5" required aria-required="true" aria-invalid="false" aria-describedby="f-message-err" placeholder="Tell us who the lessons are for and any experience so far."></textarea>
+                <p class="field-error" id="f-message-err" data-error hidden></p>
+              </div>
+            </div>
+            <p class="form-status mt-5" data-form-status role="alert" hidden></p>
+            <div class="mt-6 flex flex-col items-start gap-4">
+              <button class="btn btn-primary" type="submit">Send Enquiry</button>
+              <p class="text-small text-muted">Preview only: this form checks your entries but does not send them anywhere.</p>
+            </div>
+          </form>
+
+          <div class="success-panel" data-form-success tabindex="-1" hidden role="status">
+            <span class="success-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>
+            <h3 class="text-h3">Thank you. Your entries look complete.</h3>
+            <p class="text-muted">Your enquiry about <strong data-success-course></strong> has been checked in your browser. This is a preview site, so nothing has been sent or stored. To reach the academy, use the phone number or email shown on this page.</p>
+            <button class="btn btn-secondary" type="button" data-form-reset>Write Another Enquiry</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CONTACT CTA -->
+    <section class="section-sm bg-canvas lg:py-section" aria-labelledby="cta-title">
+      <div class="container-page">
+        <div class="section-brand cta-card">
+          <div class="kolam-ornament" aria-hidden="true"></div>
+          <div class="flex max-w-xl flex-col items-start gap-5">
+          <span class="eyebrow on-dark">Prefer to talk?</span>
+          <h2 id="cta-title">Call or write to us directly.</h2>
+          <p class="lead">Questions about vocal or veena, instruments or trial classes? We are happy to help.</p>
+          <div class="btn-group">
+            <a class="btn btn-on-dark" href="tel:" data-contact="phone"></a>
+            <a class="btn btn-ghost-on-dark" href="courses.html">View Courses</a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-component="footer"></div>
+</body>
+</html>

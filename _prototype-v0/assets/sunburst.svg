@@ -1,0 +1,2 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><g stroke="currentColor" stroke-width="2" fill="none"><circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="90" stroke-dasharray="1 9"/>
+<path id="r" d="M200 120V20M200 280V380M120 200H20M280 200H380M143 143L72 72M257 257L328 328M257 143L328 72M143 257L72 328"/><path d="M200 105V40M200 295V360M105 200H40M295 200H360M133 133L87 87M267 267L313 313M267 133L313 87M133 267L87 313" transform="rotate(22.5 200 200)"/></g></svg>

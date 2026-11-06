@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+<path d="M200 40C260 100 260 150 200 200C140 150 140 100 200 40Z"/><path d="M360 200C300 260 250 260 200 200C250 140 300 140 360 200Z"/><path d="M200 360C140 300 140 250 200 200C260 250 260 300 200 360Z"/><path d="M40 200C100 140 150 140 200 200C150 260 100 260 40 200Z"/>
+<circle cx="200" cy="200" r="150" stroke-dasharray="2 12"/><circle cx="200" cy="200" r="185" stroke-dasharray="2 12"/>
+<path d="M90 90C130 110 110 130 90 110C70 130 50 110 90 90ZM310 90C350 110 330 130 310 110C290 130 270 110 310 90ZM90 310C130 330 110 350 90 330C70 350 50 330 90 310ZM310 310C350 330 330 350 310 330C290 350 270 330 310 310Z"/></g>
+<g fill="currentColor"><circle cx="200" cy="200" r="7"/><circle cx="200" cy="20" r="4"/><circle cx="200" cy="380" r="4"/><circle cx="20" cy="200" r="4"/><circle cx="380" cy="200" r="4"/></g></svg>

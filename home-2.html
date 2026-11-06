@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NadaVeena | Learn Carnatic Vocal and Veena (Home 2)</title>
+  <meta name="description" content="Carnatic vocal and veena classes with practising artists. Explore the learning journey, meet the teachers and book a trial class.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="dist/css/styles.css">
+  <link rel="preload" as="image" href="assets/images/photos/h2-hero-vocalist-tanpura.jpg">
+  <script src="src/js/preinit.js"></script>
+  <script type="module" src="src/js/main.js"></script>
+</head>
+<body>
+  <div data-component="header"></div>
+
+  <main id="main">
+
+    <!-- 1. HERO: full-bleed photograph with an overlapping title panel -->
+    <section aria-labelledby="hero-title">
+      <figure class="h2-band">
+        <img src="assets/images/photos/h2-hero-vocalist-tanpura.jpg" alt="A vocalist in black and white, singing with one hand raised, resting against a tanpura" width="2400" height="1500" fetchpriority="high" style="object-position: 50% 38%">
+      </figure>
+      <div class="container-page">
+        <div class="hero-panel">
+          <span class="eyebrow">Carnatic vocal and veena</span>
+          <h1 id="hero-title" class="text-h1">Every raga begins with listening.</h1>
+          <p class="lead">Vocal and veena classes with practising artists, from first lessons to the concert stage.</p>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="courses.html">Explore Courses</a>
+            <a class="btn btn-secondary" href="contact.html">Book a Trial Class</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ACADEMY PHILOSOPHY -->
+    <section class="section" aria-labelledby="philosophy-title">
+      <div class="container-page grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
+        <div>
+          <div class="section-heading !mb-8">
+            <span class="eyebrow">Our philosophy</span>
+            <h2 id="philosophy-title">We teach the ear before the hand.</h2>
+            <p class="lead">A guru–shishya spirit with a modern, structured path: listen first, play with intent, carry the tradition forward.</p>
+          </div>
+          <dl>
+            <div class="pillar"><dt>Shruti</dt><dd>Pitch and the trained ear.</dd></div>
+            <div class="pillar"><dt>Laya</dt><dd>Rhythm and patience.</dd></div>
+            <div class="pillar"><dt>Bhava</dt><dd>Feeling and expression.</dd></div>
+          </dl>
+        </div>
+        <div class="mx-auto w-full max-w-md lg:max-w-none">
+          <div class="media-frame" data-ratio="portrait"><img src="assets/images/photos/h2-philosophy-tambura.jpg" alt="A Tanjore tambura standing against a grey backdrop" width="1000" height="1250" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. COURSES (tabs) -->
+    <section class="section section-alt" aria-labelledby="courses-title">
+      <div class="container-page">
+        <div class="section-heading">
+          <span class="eyebrow">Courses</span>
+          <h2 id="courses-title">Choose how you want to make music</h2>
+          <p class="lead">Graded levels for every age, from first lessons to arangetram.</p>
+        </div>
+        <div data-tabs>
+          <div class="tablist" role="tablist" aria-label="Courses">
+            <button type="button" class="tab" role="tab" id="tab-vocal" aria-controls="panel-vocal" aria-selected="true">Carnatic Vocal</button>
+            <button type="button" class="tab" role="tab" id="tab-veena" aria-controls="panel-veena" aria-selected="false" tabindex="-1">Veena</button>
+          </div>
+
+          <div class="tabpanel course-panel" role="tabpanel" id="panel-vocal" aria-labelledby="tab-vocal">
+            <div class="media-frame" data-ratio="landscape"><img src="assets/images/photos/h2-course-concert.jpg" alt="A Carnatic vocalist performing with violin and mridangam accompanists" width="1400" height="933" loading="lazy" decoding="async"></div>
+            <div class="course-info">
+              <h3 class="text-h2">Carnatic Vocal</h3>
+              <p class="lead">Build a steady voice, then the songs and raga sense to use it.</p>
+              <ul class="learn-list w-full">
+                <li>Voice culture and shruti</li><li>Sarali varisai and varnams</li>
+                <li>Kritis of the Trinity</li><li>Raga alapana and kalpanaswara</li>
+              </ul>
+              <p class="meta-line w-full">Ages 6+ · Beginner to advanced · Weekly</p>
+              <a class="btn btn-primary" href="courses.html#vocal">Explore Vocal</a>
+            </div>
+          </div>
+
+          <div class="tabpanel course-panel" role="tabpanel" id="panel-veena" aria-labelledby="tab-veena" hidden>
+            <div class="media-frame" data-ratio="landscape"><img src="assets/images/photos/h2-course-veena.jpg" alt="A Mahati vina with two gourd resonators, in black and white" width="1400" height="933" loading="lazy" decoding="async"></div>
+            <div class="course-info">
+              <h3 class="text-h2">Veena</h3>
+              <p class="lead">Learn the instrument of Saraswati, with its singing gamakas.</p>
+              <ul class="learn-list w-full">
+                <li>Posture, fingering and plucking</li><li>Gamakas that make a raga sing</li>
+                <li>Varnams, kritis and tillanas</li><li>Playing with a vocalist</li>
+              </ul>
+              <p class="meta-line w-full">Ages 8+ · Instruments provided · Weekly</p>
+              <a class="btn btn-primary" href="courses.html#veena">Explore Veena</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. LEARNING JOURNEY -->
+    <section class="section" aria-labelledby="journey-title">
+      <div class="container-page grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div class="mx-auto w-full max-w-sm lg:sticky lg:top-28 lg:max-w-none">
+          <div class="media-frame" data-ratio="portrait"><img src="assets/images/photos/h2-journey-practice.jpg" alt="A musician playing the morsing close to a microphone during a concert" width="1000" height="1250" loading="lazy" decoding="async"></div>
+        </div>
+        <div>
+          <div class="section-heading !mb-8">
+            <span class="eyebrow">The learning journey</span>
+            <h2 id="journey-title">Five stages, one steady path</h2>
+            <p class="lead">Small batches, personal correction, and practice plans you can follow at home.</p>
+          </div>
+          <ol class="journey">
+            <li><small>Stage 1</small><h3>Foundations</h3><p>Shruti, sarali varisai and basic technique.</p></li>
+            <li><small>Stage 2</small><h3>Varnams</h3><p>Speed, accuracy and tala, phrase by phrase.</p></li>
+            <li><small>Stage 3</small><h3>Kritis</h3><p>Songs with gamakas and expression.</p></li>
+            <li><small>Stage 4</small><h3>Manodharma</h3><p>Raga alapana and kalpanaswara: making music of your own.</p></li>
+            <li><small>Stage 5</small><h3>The stage</h3><p>Recitals and, when ready, the arangetram.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TEACHERS (roster, shared teacher data) -->
+    <section class="section section-alt" aria-labelledby="gurus-title">
+      <div class="container-page">
+        <div class="section-heading">
+          <span class="eyebrow">Our gurus</span>
+          <h2 id="gurus-title">Meet the teachers</h2>
+          <p class="lead">Concert musicians who also love to teach.</p>
+        </div>
+        <div data-teachers data-variant="roster"></div>
+        <div class="mt-10"><a class="btn btn-secondary" href="teachers.html">Meet All Teachers</a></div>
+      </div>
+    </section>
+
+    <!-- 6. BENEFITS -->
+    <section class="section section-brand" aria-labelledby="benefits-title">
+      <div class="container-page grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
+        <div>
+          <div class="section-heading !mb-8">
+            <span class="eyebrow">Why Carnatic music</span>
+            <h2 id="benefits-title">What the practice gives you</h2>
+            <p class="lead">Skills that last well beyond the lesson.</p>
+          </div>
+          <div class="benefit-grid">
+            <div><h3>A trained ear</h3><p>You learn to hear pitch and rhythm precisely.</p></div>
+            <div><h3>Calm focus</h3><p>Daily riyaz builds patience and attention.</p></div>
+            <div><h3>Cultural roots</h3><p>Songs and ragas carried through generations.</p></div>
+            <div><h3>Stage confidence</h3><p>Regular recitals make performing familiar.</p></div>
+          </div>
+        </div>
+        <div class="mx-auto w-full max-w-sm lg:max-w-none">
+          <div class="media-frame" data-ratio="portrait"><img src="assets/images/photos/h2-benefits-portrait.jpg" alt="A historic black-and-white photograph of a seated musician in a garden" width="1000" height="1250" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ON STAGE / PERFORMANCE OPPORTUNITIES -->
+    <section class="section !pb-0" aria-labelledby="stage-title">
+      <div class="stage-photo"><img src="assets/images/photos/h2-stage-concert.jpg" alt="A black-and-white photograph of a vocal and percussion concert on stage" width="2048" height="939" loading="lazy" decoding="async" style="object-position: 50% 55%"></div>
+      <div class="container-page">
+        <div class="stage-panel">
+          <div class="flex flex-col gap-3">
+            <span class="eyebrow">On stage</span>
+            <h2 id="stage-title" class="text-h2">Students perform, not just practise</h2>
+          </div>
+          <dl><dt>Riyaz</dt><dd>Daily practice with weekly goals.</dd></dl>
+          <dl><dt>Recitals</dt><dd>A monthly student kutcheri.</dd></dl>
+          <dl><dt>Festivals</dt><dd>An annual celebration of music.</dd></dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. STUDENT EXPERIENCE (slider) -->
+    <section class="section" aria-labelledby="voices-title">
+      <div class="container-page grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
+        <div class="media-frame" data-ratio="landscape"><img src="assets/images/photos/h2-voices-ensemble.jpg" alt="Two violinists seated side by side at a concert" width="1400" height="933" loading="lazy" decoding="async"></div>
+        <div data-quotes class="quote-stage flex flex-col gap-6">
+          <div class="section-heading !mb-0"><span class="eyebrow">Student experience</span><h2 id="voices-title" class="sr-only">Student voices</h2></div>
+          <figure data-quote class="flex flex-col gap-5">
+            <blockquote>“Each week I leave knowing exactly what to practise.”</blockquote>
+            <figcaption class="flex items-center gap-3 text-small"><span class="avatar" aria-hidden="true">D</span><span><strong>Divya</strong><br><span class="text-muted">Vocal student, Level 1</span></span></figcaption>
+          </figure>
+          <figure data-quote class="flex flex-col gap-5" hidden>
+            <blockquote>“The veena felt impossible. Now I play a full varnam.”</blockquote>
+            <figcaption class="flex items-center gap-3 text-small"><span class="avatar" aria-hidden="true">K</span><span><strong>Karthik</strong><br><span class="text-muted">Veena student, Level 3</span></span></figcaption>
+          </figure>
+          <figure data-quote class="flex flex-col gap-5" hidden>
+            <blockquote>“My son looks forward to class. He hums his lessons all week.”</blockquote>
+            <figcaption class="flex items-center gap-3 text-small"><span class="avatar" aria-hidden="true">L</span><span><strong>Lalitha</strong><br><span class="text-muted">Parent of a young learner</span></span></figcaption>
+          </figure>
+          <div class="quote-controls">
+            <button type="button" class="icon-btn" data-quote-prev aria-label="Previous testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="flip-rtl"><path d="m15 6-6 6 6 6"/></svg></button>
+            <span class="text-small font-bold text-muted" data-quote-count aria-live="polite">1 / 3</span>
+            <button type="button" class="icon-btn" data-quote-next aria-label="Next testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="flip-rtl"><path d="m9 6 6 6-6 6"/></svg></button>
+          </div>
+          <p class="text-small text-muted">Illustrative student voices written for this preview, not verified reviews.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FINAL CTA -->
+    <section class="pb-section" aria-labelledby="cta-title">
+      <div class="container-page">
+        <div class="cta-panel">
+          <div class="on-dark flex flex-col items-start justify-center gap-5 p-8 md:p-12">
+            <span class="eyebrow">Begin</span>
+            <h2 id="cta-title">Your first class is a conversation, not a test.</h2>
+            <p class="lead">Book a free trial and meet the teacher who suits you, or explore the courses first.</p>
+            <div class="btn-group">
+              <a class="btn btn-on-dark" href="contact.html">Book a Trial Class</a>
+              <a class="btn btn-ghost-on-dark" href="courses.html">Explore Courses</a>
+            </div>
+          </div>
+          <img src="assets/images/photos/h2-cta-concert.jpg" alt="A vocalist on stage with ghatam and mridangam players at a Carnatic concert" width="858" height="699" loading="lazy" decoding="async" style="object-position: 50% 45%">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-component="footer"></div>
+</body>
+</html>

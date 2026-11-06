@@ -1,0 +1,262 @@
+/* Login Portal + Student Dashboard components. Imported by input.css; uses the shared tokens. */
+@layer components {
+
+  /* ---------- Login Portal ---------- */
+  .auth-body { @apply bg-canvas; }
+  .auth-media { @apply relative isolate flex h-44 flex-col justify-between overflow-hidden bg-deep p-6 text-on-brand lg:h-auto lg:min-h-[100dvh] lg:p-12; }
+  .auth-media > img { @apply absolute inset-0 -z-20 h-full w-full object-cover opacity-0 transition-opacity duration-700; }
+  .auth-media > img[data-active="true"] { @apply opacity-100; }
+  .auth-media::after { content: ""; @apply absolute inset-0 -z-10; background: linear-gradient(180deg, rgb(var(--c-deep) / .78), rgb(var(--c-deep) / .38) 48%, rgb(var(--c-deep) / .94)); }
+  .auth-quote { @apply hidden max-w-sm font-heading text-h2 font-medium italic leading-tight text-on-brand lg:block; }
+  .auth-quote::before { content: ""; @apply mb-5 block h-px w-14 bg-gold-light; }
+  .auth-panel { @apply relative flex items-start justify-center px-gutter pb-12 pt-20 lg:items-center lg:pt-12; }
+  .auth-tools { @apply absolute end-4 top-4 flex gap-2 lg:end-8 lg:top-6; }
+  .auth-card { @apply w-full max-w-md lg:max-w-lg; }
+  .auth-view[hidden] { display: none; }
+
+  .pw { @apply relative; }
+  /* Password inputs are dir="ltr", so reserve the button space on the physical side that matches the page direction. */
+  .pw .input { padding-right: 3rem; }
+  [dir="rtl"] .pw .input { padding-right: 1rem; padding-left: 3rem; }
+  .pw-btn { @apply absolute end-1 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md text-muted transition hover:text-accent; }
+  .pw-btn svg { @apply h-5 w-5; }
+  .check { @apply flex cursor-pointer items-start gap-3 text-small text-ink; }
+  .check input { @apply mt-0.5 h-5 w-5 shrink-0 cursor-pointer appearance-none rounded border-2 border-line bg-surface transition checked:border-accent-fill checked:bg-accent-fill; }
+  .check input:checked { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233A0A12' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E"); background-size: 80%; background-position: center; background-repeat: no-repeat; }
+  .check input:focus-visible { outline: 2px solid rgb(var(--c-accent)); outline-offset: 2px; }
+  .field:has(input[type="checkbox"][aria-invalid="true"]) .check input { @apply border-terracotta; }
+  .divider-text { @apply my-6 flex items-center gap-4 text-small text-muted; }
+  .divider-text::before, .divider-text::after { content: ""; @apply h-px flex-1 bg-line; }
+  .btn-social { @apply inline-flex h-btn items-center justify-center gap-3 rounded-md border-2 border-line bg-surface px-4 font-body text-small font-bold text-ink transition hover:border-accent-fill hover:bg-sunken active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-social svg { @apply h-5 w-5 shrink-0; }
+  .strength { @apply mt-1 grid grid-cols-4 gap-1.5; }
+  .strength span { @apply h-1.5 rounded-full bg-line transition; }
+  .strength[data-level="1"] span:nth-child(-n+1) { @apply bg-terracotta; }
+  .strength[data-level="2"] span:nth-child(-n+2) { @apply bg-sandal; }
+  .strength[data-level="3"] span:nth-child(-n+3) { @apply bg-accent-fill; }
+  .strength[data-level="4"] span:nth-child(-n+4) { @apply bg-leaf; }
+  .spinner { @apply inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent; }
+  .btn:disabled { @apply cursor-wait; }
+
+  /* ---------- Dashboard shell ---------- */
+  .app-body { @apply bg-canvas; }
+  .app-sidebar { z-index: 55; }
+  .app-overlay { @apply fixed inset-0 bg-deep/60 lg:hidden; z-index: 54; }
+  .side-brand { @apply flex h-header shrink-0 items-center justify-between border-b border-on-brand/15 px-5; }
+  .side-brand .brand-link svg { @apply text-gold-light; }
+  .side-nav { @apply flex flex-1 flex-col gap-1 p-4; }
+  .side-link { @apply relative flex items-center gap-3 rounded-md px-3 py-3 text-small font-bold text-on-brand/80 no-underline transition hover:bg-on-brand/10 hover:text-on-brand; }
+  .side-link svg { @apply h-5 w-5 shrink-0; }
+  .side-link[aria-current="page"] { @apply bg-gold-light/15 text-gold-light; }
+  .side-link[aria-current="page"]::before { content: ""; @apply absolute inset-y-2 start-0 w-1 rounded-full bg-gold-light; }
+  .side-foot { @apply flex flex-col gap-3 border-t border-on-brand/15 p-4; }
+  .app-topbar { @apply z-40; }
+  .app-crumb { @apply flex items-center gap-2 text-small; }
+  .app-content { @apply py-6 lg:py-8; }
+  .view-head { @apply mb-6 flex flex-wrap items-end justify-between gap-4 lg:mb-8; }
+  .profile-btn { @apply inline-flex h-10 items-center gap-2 rounded-md border border-line bg-surface ps-1 pe-2 text-ink transition hover:border-accent md:pe-3; }
+  .avatar-lg { @apply inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand font-heading text-h4 font-bold text-gold-light; }
+  .avatar-xl { @apply inline-flex h-28 w-28 items-center justify-center rounded-full border-4 border-accent-fill bg-brand object-cover font-heading text-h2 font-bold text-gold-light; }
+  .photo-area { @apply flex justify-center; }
+  .menu-panel { @apply absolute end-0 top-full mt-2 w-[min(22rem,calc(100vw-2rem))] overflow-hidden rounded-lg border border-line bg-surface shadow-lift; z-index: 60; }
+  .menu-panel[hidden] { display: none; }
+  .menu-head { @apply flex items-center justify-between gap-3 border-b border-line px-4 py-3; }
+  .menu-item { @apply flex items-center gap-3 px-4 py-3 text-small font-bold text-ink no-underline transition hover:bg-sunken hover:text-accent; }
+  .menu-item svg { @apply h-5 w-5; }
+  .notif { @apply flex flex-col gap-0.5 border-b border-line px-4 py-3 last:border-b-0; }
+  .notif-dot { @apply absolute -end-0.5 -top-0.5 h-3 w-3 rounded-full border-2 border-canvas bg-terracotta; }
+
+  /* ---------- Dashboard content ---------- */
+  .panel { @apply rounded-lg border border-line bg-surface p-5 shadow-soft md:p-6; }
+  .panel-head { @apply mb-5 flex flex-wrap items-baseline justify-between gap-2; }
+  .panel-title { @apply font-heading text-h4 font-semibold text-ink; }
+  .stat-label { @apply text-eyebrow font-bold uppercase text-muted; letter-spacing: .14em; }
+  .stat-value { @apply font-heading text-h4 font-semibold text-ink; }
+  .stat-big { @apply mt-1 font-heading text-h2 font-semibold leading-none text-ink; }
+  .next-class { @apply flex flex-col gap-5 rounded-lg bg-brand p-5 text-on-brand shadow-card sm:flex-row sm:items-center md:p-6; }
+  .next-class h2 { @apply text-on-brand; }
+  .next-class .eyebrow { @apply text-gold-light; }
+  .next-class .eyebrow::before { @apply bg-gold-light; }
+  .next-date { @apply flex h-24 w-20 shrink-0 flex-col items-center justify-center rounded-md border border-gold-light/50 bg-deep text-gold-light; }
+  .next-date span { @apply text-eyebrow font-bold uppercase; letter-spacing: .16em; }
+  .next-date strong { @apply font-heading text-h1 leading-none; }
+  .progress-ring { @apply relative mx-auto h-36 w-36 rounded-full; background: conic-gradient(rgb(var(--c-accent-fill)) calc(var(--p) * 1%), rgb(var(--c-line)) 0); }
+  .progress-ring > div { @apply absolute inset-3 flex flex-col items-center justify-center rounded-full bg-surface; }
+  .progress-ring strong { @apply font-heading text-h2 leading-none; }
+  .progress-ring span { @apply text-small text-muted; }
+  .milestones { @apply flex flex-col; }
+  .milestones li { @apply relative flex gap-4 pb-5 last:pb-0; }
+  .milestones li:not(:last-child)::before { content: ""; @apply absolute start-[0.8rem] top-7 bottom-0 w-px bg-line; }
+  .milestones .dot { @apply z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-line bg-surface text-white; }
+  .milestones .dot svg { @apply h-4 w-4; }
+  .milestones li[data-state="done"] .dot { @apply border-leaf bg-leaf; }
+  .milestones li[data-state="current"] .dot { @apply border-accent-fill bg-accent-fill/30; }
+  .status { @apply inline-flex shrink-0 items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-[0.75rem] font-bold leading-5; }
+  .status[data-tone="success"] { @apply bg-leaf/15 text-leaf; }
+  .status[data-tone="warn"] { @apply bg-terracotta/15 text-terracotta; }
+  .status[data-tone="info"] { @apply bg-peacock/15 text-peacock; }
+  .status[data-tone="gold"] { @apply bg-accent-fill/25 text-accent; }
+  .next-class .status[data-tone="gold"] { @apply bg-gold-light/20 text-gold-light; }
+  .bars { @apply relative flex h-40 items-end gap-2 border-b border-line pb-6 pt-2; }
+  .goal-line { @apply pointer-events-none absolute inset-x-0 border-t border-dashed border-accent-fill/70; margin-bottom: 1.5rem; }
+  .bar-col { @apply relative flex h-full flex-1 flex-col items-center justify-end; }
+  .bar { @apply w-full max-w-[2.25rem] rounded-t bg-sandal; }
+  .bar[data-hit="true"] { @apply bg-accent-fill; }
+  .bar[data-zero="true"] { @apply bg-line; }
+  .bar-label { @apply absolute -bottom-6 text-small text-muted; }
+  .announce { @apply border-s-2 border-line ps-4; }
+  .announce[data-tone="info"] { @apply border-accent-fill; }
+  .timeline { @apply flex flex-col gap-4; }
+  .timeline li { @apply flex gap-3; }
+  .timeline-icon { @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sunken text-accent; }
+  .timeline-icon svg { @apply h-4 w-4; }
+  .progress { @apply h-2.5 overflow-hidden rounded-full bg-line; }
+  .progress span { @apply block h-full rounded-full bg-accent-fill; }
+  .week-strip { @apply grid grid-cols-7 gap-1.5 sm:gap-2; }
+  .week-strip > div { @apply flex min-h-[3.75rem] flex-col items-center justify-center gap-0.5 rounded-md border border-line bg-canvas px-1 text-small text-muted; }
+  .week-strip > div[data-on="true"] { @apply border-accent-fill bg-brand text-gold-light; }
+  .week-strip strong { @apply text-[0.7rem] leading-tight; }
+  .class-list > li { @apply flex items-center gap-4 border-t border-line py-4 first:border-t-0 first:pt-0; }
+  .class-date { @apply flex h-14 w-14 shrink-0 flex-col items-center justify-center gap-0.5 rounded-md bg-sunken text-ink; }
+  .class-date strong { @apply font-heading text-h4 leading-none; }
+  .class-date span { @apply text-eyebrow font-bold uppercase text-accent; letter-spacing: .1em; }
+  @media (max-width: 479px) { .class-list > li { @apply flex-wrap; } }
+
+  /* Data tables: real tables from 768px, stacked rows below */
+  .data-table { @apply w-full border-collapse text-start text-small; }
+  .data-table th, .data-table td { @apply border-b border-line px-3 py-3 text-start align-middle; }
+  .data-table thead th { @apply text-eyebrow font-bold uppercase text-muted; letter-spacing: .14em; }
+  .data-table .num { @apply text-end; }
+  .data-table tbody tr:last-child td { @apply border-b-0; }
+  @media (max-width: 767px) {
+    .data-table thead { @apply sr-only; }
+    .data-table, .data-table tbody, .data-table tr, .data-table td { @apply block w-full; }
+    .data-table tr { @apply border-b border-line py-3 last:border-b-0; }
+    .data-table td { @apply flex items-center justify-between gap-4 border-0 px-0 py-1.5; }
+    .data-table td::before { content: attr(data-label); @apply text-eyebrow font-bold uppercase text-muted; letter-spacing: .12em; }
+    .data-table .num { @apply text-start; }
+  }
+
+  /* Practice notes */
+  .seg { @apply inline-flex flex-wrap gap-1 rounded-lg border border-line bg-surface p-1; }
+  .seg button { @apply inline-flex items-center gap-2 rounded-md px-4 py-2 text-small font-bold text-muted transition hover:text-ink; }
+  .seg button[aria-pressed="true"] { @apply bg-brand text-on-brand; }
+  [data-theme="dark"] .seg button[aria-pressed="true"] { @apply bg-accent text-deep; }
+  .seg span { @apply text-[0.75rem] opacity-80; }
+  .note { @apply rounded-lg border border-line border-s-4 bg-surface p-5 shadow-soft md:p-6; }
+  .note[data-status="completed"] { @apply border-s-leaf; }
+  .note[data-status="pending"] { @apply border-s-terracotta; }
+  .note-top { @apply flex items-start justify-between gap-4; }
+  .note-body { @apply mt-4 grid gap-4 md:grid-cols-2; }
+  .note-body h4 { @apply mb-1 font-body; }
+  .note-actions { @apply mt-5 flex flex-wrap gap-2 border-t border-line pt-4; }
+  .btn-tool { @apply inline-flex h-10 items-center gap-2 rounded-md border border-line bg-surface px-3 text-small font-bold text-ink transition hover:border-accent hover:text-accent; }
+  .btn-tool svg { @apply h-4 w-4; }
+  .btn-tool[data-danger]:hover { @apply border-terracotta text-terracotta; }
+  .btn-tool[aria-pressed="true"] svg { @apply text-leaf; }
+  .btn-danger { @apply bg-terracotta text-white hover:opacity-90; }
+  .empty { @apply mt-6 flex flex-col items-center gap-2 rounded-lg border border-dashed border-line py-14 text-center text-muted; }
+  .empty svg { @apply h-10 w-10 text-accent; }
+  .btn svg { @apply h-4 w-4; }
+
+  /* Dialogs and toasts */
+  .app-dialog { @apply m-auto w-[min(34rem,calc(100vw-2rem))] max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-xl border border-line bg-surface p-0 text-ink shadow-lift; }
+  .app-dialog::backdrop { background: rgb(var(--c-deep) / .65); }
+  .dialog-head { @apply flex items-center justify-between gap-4 border-b border-line px-6 py-4; }
+  .dialog-body { @apply flex flex-col gap-4 px-6 py-5; }
+  .dialog-foot { @apply flex flex-wrap justify-end gap-3 border-t border-line px-6 py-4; }
+  .receipt { @apply gap-5; }
+  .toast-region { @apply fixed bottom-4 end-4 flex max-w-[calc(100vw-2rem)] flex-col gap-2; z-index: 70; }
+  .toast { @apply rounded-md border border-gold-light/40 border-s-4 border-s-gold-light bg-deep px-4 py-3 text-small font-bold text-on-brand shadow-lift; }
+  .toast[data-tone="error"] { @apply border-s-terracotta; }
+}
+
+@layer base {
+  /* Headings that receive programmatic focus on view change should not show a focus ring. */
+  [tabindex="-1"]:focus { outline: none; }
+}
+@layer components {
+  .auth-media .brand-link svg { @apply text-gold-light; }
+}
+
+@layer components {
+  .next-class li svg { @apply h-4 w-4 shrink-0 text-gold-light; }
+}
+
+@layer base {
+  /* Keep trailing punctuation of English sentences on the correct side in RTL (same technique as paragraphs). */
+  [dir="rtl"] .check > span::after { content: "\200E"; }
+}
+
+@layer components {
+  .faculty-strip .faculty-initial { @apply inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-gold-light bg-deep font-heading text-lg font-bold text-gold-light; }
+}
+
+@layer components {
+  /* Final CTA: a floating maroon card on a light band, so it never merges with the maroon footer. */
+  .cta-card { @apply relative isolate overflow-hidden rounded-xl p-8 shadow-lift md:p-12 lg:p-16; }
+  .map-frame { @apply relative aspect-[4/3] w-full overflow-hidden rounded-lg border-2 border-accent-fill bg-sunken shadow-card sm:aspect-[16/9] lg:aspect-[21/9]; }
+  .map-frame iframe { @apply absolute inset-0 h-full w-full border-0; }
+}
+
+@layer components {
+  html.menu-open, html.menu-open body { overflow: hidden; }
+  .dir-btn { @apply inline-flex h-10 min-w-[3.5rem] items-center justify-center rounded-md border border-line bg-surface px-3 text-small font-bold leading-none tracking-[0.08em] text-ink transition hover:border-accent hover:text-accent; }
+  .auth-media .brand-home { @apply w-fit rounded-md transition-opacity hover:opacity-80; }
+  .brand-home:focus-visible { outline: 2px solid rgb(var(--c-gold-light)); outline-offset: 4px; }
+  .social-list { @apply flex items-center gap-3; }
+  .social-link { @apply inline-flex h-10 w-10 items-center justify-center rounded-full border border-on-brand/30 text-on-brand/90 transition hover:border-gold-light hover:text-gold-light; }
+  [data-theme="dark"] .social-link { @apply border-line text-ink/80 hover:border-accent hover:text-accent; }
+  .social-link svg { @apply h-5 w-5; }
+  .social-link[aria-disabled="true"] { @apply cursor-default opacity-70 hover:border-on-brand/30 hover:text-on-brand/90; }
+  .social-link:focus-visible { outline: 2px solid rgb(var(--c-gold-light)); outline-offset: 3px; }
+
+  /* Mobile CTA groups: equal-size, centred, never touching the screen edge. */
+  @media (max-width: 639px) {
+    .btn-group { @apply grid w-full max-w-sm grid-cols-1 justify-items-stretch gap-3; margin-inline: auto; }
+    .btn-group > .btn { @apply w-full min-w-0; }
+    .dialog-foot { @apply grid grid-cols-2; }
+    .dialog-foot > .btn { @apply w-full min-w-0 px-3; }
+    .note-actions { @apply grid grid-cols-2; }
+    .note-actions [data-act="toggle"] { @apply col-span-2; }
+    .note-actions .btn-tool { @apply justify-center; }
+  }
+}
+
+@layer components {
+  .side-foot button.side-link { @apply w-full cursor-pointer border-0 bg-transparent text-start; }
+}
+
+@layer components {
+  /* Between 1024px and 1279px the desktop header is tightened so the labelled Direction control, Dashboard and Login all fit. */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .site-header-bar { @apply gap-2; }
+    .nav-desktop { @apply gap-0; }
+    .nav-desktop .nav-link { @apply px-2 text-[0.75rem]; letter-spacing: 0.06em; }
+    .header-tools { @apply gap-1.5; }
+    .header-tools .dir-btn { @apply px-2; }
+    .header-tools .header-cta { @apply min-w-0 px-4; }
+  }
+}
+
+@layer components {
+  .profile-btn .avatar { @apply h-8 w-8 text-sm; }
+}
+
+@layer components {
+  .side-brand .brand-link em { @apply text-gold-light; }
+  /* From 640px up, buttons in one CTA group share one width (the widest label sets it) and one height. */
+  @media (min-width: 640px) {
+    .btn-group { @apply grid w-fit max-w-full grid-flow-col; grid-auto-columns: 1fr; }
+    .btn-group.justify-center { margin-inline: auto; }
+    .btn-group > .btn { @apply w-full; }
+  }
+}
+
+@layer components {
+  /* Footer contact rows: icon + text, aligned to the first line, mirrored automatically in RTL. */
+  .footer-row { @apply flex items-start gap-3 py-1.5; }
+  .footer-row > svg { @apply mt-0.5 h-[1.125rem] w-[1.125rem] shrink-0 text-gold-light; }
+  [data-theme="dark"] .footer-row > svg { @apply text-accent; }
+  .footer-row > span, .footer-row > a { @apply min-w-0; }
+}

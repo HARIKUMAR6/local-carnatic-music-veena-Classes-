@@ -1,0 +1,50 @@
+/* Colour tokens as space-separated RGB triplets (enables Tailwind opacity modifiers).
+   Light = warm ivory + deep maroon. Dark = aubergine-black + antique gold.
+   Components only reference semantic names, never raw hex. */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --c-canvas: 251 245 230;      /* #FBF5E6 warm ivory */
+  --c-surface: 255 251 240;     /* #FFFBF0 */
+  --c-sunken: 243 232 207;      /* #F3E8CF parchment */
+  --c-ink: 42 21 20;            /* #2A1514 */
+  --c-muted: 107 81 72;         /* #6B5148 */
+  --c-line: 227 211 174;        /* #E3D3AE */
+  --c-primary: 107 20 32;       /* #6B1420 deep maroon */
+  --c-primary-hover: 82 16 25;  /* #521019 */
+  --c-on-primary: 251 245 230;
+  --c-accent: 122 92 20;        /* #7A5C14 antique gold (AA on ivory + parchment) */
+  --c-accent-fill: 176 138 46;  /* #B08A2E antique gold */
+  --c-brand: 107 20 32;
+  --c-on-brand: 251 245 230;
+  --c-gold-light: 232 201 122;  /* #E8C97A (fixed, for dark bands) */
+  --c-deep: 58 10 18;           /* #3A0A12 (fixed) */
+  --c-sandal: 201 163 107;      /* #C9A36B */
+  --c-peacock: 47 93 90;       /* #2F5D5A */
+  --c-terracotta: 162 75 47;    /* #A24B2F */
+  --c-leaf: 63 91 58;           /* #3F5B3A */
+  --c-shadow: 74 28 20;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --c-canvas: 26 13 16;         /* #1A0D10 */
+  --c-surface: 37 18 22;        /* #251216 */
+  --c-sunken: 48 26 30;         /* #301A1E */
+  --c-ink: 245 236 216;         /* #F5ECD8 */
+  --c-muted: 196 179 154;       /* #C4B39A */
+  --c-line: 74 44 48;           /* #4A2C30 */
+  --c-primary: 226 192 112;     /* #E2C070 gold button in dark */
+  --c-primary-hover: 238 208 140;
+  --c-on-primary: 42 14 18;
+  --c-accent: 226 192 112;
+  --c-accent-fill: 201 163 82;
+  --c-gold-light: 232 201 122;
+  --c-deep: 58 10 18;
+  --c-sandal: 201 163 107;
+  --c-peacock: 96 156 150;
+  --c-terracotta: 214 125 96;
+  --c-leaf: 134 168 126;
+  --c-shadow: 0 0 0;
+}
+/* --c-brand / --c-on-brand intentionally stay maroon/ivory in both themes. */

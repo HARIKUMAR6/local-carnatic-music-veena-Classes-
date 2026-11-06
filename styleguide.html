@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Design System · NadaVeena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="dist/css/styles.css">
+  <script src="src/js/preinit.js"></script>
+  <script type="module" src="src/js/main.js"></script>
+</head>
+<body>
+  <div data-component="header"></div>
+
+  <main id="main">
+    <div class="section-sm section-alt">
+      <div class="container-page">
+        <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+          <ol><li><a href="index.html">Home</a></li><li aria-current="page">Design System</li></ol>
+        </nav>
+        <div class="section-heading !mb-0">
+          <span class="eyebrow">Phase 1</span>
+          <h1>Design system reference</h1>
+          <p class="lead">Developer-only page for verifying tokens and components. It is not part of the public site.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section-sm">
+      <div class="container-page">
+        <div class="section-heading"><span class="eyebrow">Colour</span><h2>Semantic palette</h2></div>
+        <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6" id="swatches"></div>
+      </div>
+    </section>
+
+    <section class="section-sm section-alt">
+      <div class="container-page grid gap-8 md:grid-cols-2">
+        <div>
+          <div class="section-heading"><span class="eyebrow">Typography</span><h2>Heading scale</h2></div>
+          <div class="flex flex-col gap-4">
+            <p class="font-heading text-display">Display</p>
+            <h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><h4>Heading 4</h4>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <p class="lead">Lead text is used for the one-line purpose of a section.</p>
+          <p>Body text is set in Source Sans 3 at 16px with a 1.7 line-height for comfortable reading.</p>
+          <p class="text-small text-muted">Small text, used for captions and metadata.</p>
+          <p><a class="text-accent underline underline-offset-4 hover:text-primary" href="#main">Inline link style</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container-page">
+        <div class="section-heading" data-align="center"><span class="eyebrow">Buttons</span><h2>One size system</h2></div>
+        <div class="flex flex-col items-center gap-6">
+          <div class="btn-group"><a class="btn btn-primary btn-sm" href="#main">Small</a><a class="btn btn-secondary btn-sm" href="#main">Small</a></div>
+          <div class="btn-group"><a class="btn btn-primary" href="#main">Default</a><a class="btn btn-secondary" href="#main">Default</a></div>
+          <div class="btn-group"><a class="btn btn-primary btn-lg" href="#main">Large</a><a class="btn btn-secondary btn-lg" href="#main">Large</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm section-alt">
+      <div class="container-page">
+        <div class="split">
+          <div class="media-frame" data-ratio="landscape" role="img" aria-label="Image slot, 3:2 landscape"></div>
+          <div class="split-content">
+            <span class="eyebrow">Layout</span>
+            <h2>Image and content</h2>
+            <p class="lead">Add <code>data-reverse="true"</code> to swap sides. Direction switching mirrors it automatically.</p>
+            <a class="btn btn-primary" href="#main">Action</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm section-brand">
+      <div class="container-page">
+        <div class="section-heading !mb-0"><span class="eyebrow !text-accent-fill">Brand section</span><h2>Maroon feature band</h2></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-component="footer"></div>
+
+  <script type="module">
+    const names = ["canvas","surface","sunken","ink","muted","line","primary","accent","accent-fill","brand","sandal","peacock","terracotta","leaf"];
+    document.getElementById("swatches").innerHTML = names.map(n =>
+      `<div><div class="h-16 rounded-md border border-line bg-${n}"></div><p class="mt-2 text-small font-bold">${n}</p></div>`).join("");
+  </script>
+</body>
+</html>

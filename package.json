@@ -1,0 +1,14 @@
+{
+  "name": "nadaveena-academy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Carnatic Music & Veena Academy - static frontend (HTML, Tailwind CSS, vanilla JS)",
+  "scripts": {
+    "build:css": "node node_modules/tailwindcss/lib/cli.js -c tailwind.config.js -i src/css/input.css -o dist/css/styles.css --minify",
+    "watch:css": "node node_modules/tailwindcss/lib/cli.js -c tailwind.config.js -i src/css/input.css -o dist/css/styles.css --watch",
+    "serve": "npx --yes http-server . -p 5173 -c-1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

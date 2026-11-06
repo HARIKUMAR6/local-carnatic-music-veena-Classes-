@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teachers | NadaVeena Carnatic Music Academy</title>
+  <meta name="description" content="Meet the instructors of NadaVeena's Carnatic vocal and veena programmes, and how they teach.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="dist/css/styles.css">
+  <script src="src/js/preinit.js"></script>
+  <script type="module" src="src/js/main.js"></script>
+</head>
+<body>
+  <div data-component="header"></div>
+
+  <main id="main">
+
+    <!-- 1. HERO: full-bleed photograph, centred copy, faculty index -->
+    <section class="page-hero on-dark bg-deep" aria-labelledby="teachers-title">
+      <img class="hero-bleed-img" src="assets/images/photos/teachers-hero-arangetram.jpg" alt="A guru and students on a stage during a mridangam arangetram, with a young drummer seated in red" width="1800" height="1350" fetchpriority="high" style="object-position:50% 55%">
+      <div class="hero-bleed-scrim"></div>
+      <div class="page-hero-inner justify-items-center text-center">
+        <div class="flex flex-col items-center">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><ol class="justify-center"><li><a href="index.html">Home</a></li><li aria-current="page">Teachers</li></ol></nav>
+          <div class="hero-copy items-center text-center">
+            <span class="eyebrow">Our teachers</span>
+            <h1 id="teachers-title" class="text-center">Learn from musicians who teach.</h1>
+            <p class="lead max-w-prose text-center">Our instructors teach the way they were taught: patiently, personally and with the music always in front of them.</p>
+            <nav class="faculty-strip" aria-label="Instructors" data-faculty-strip></nav>
+            <div class="btn-group mt-2 justify-center">
+              <a class="btn btn-on-dark" href="#instructors">Our Instructors</a>
+              <a class="btn btn-ghost-on-dark" href="contact.html">Book a Trial Class</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. OUR INSTRUCTORS (rendered from src/js/data/teachers.js) -->
+    <section class="section scroll-mt-20" id="instructors" aria-labelledby="instructors-title">
+      <div class="container-page">
+        <div class="section-heading" data-align="center">
+          <span class="eyebrow">The faculty</span>
+          <h2 id="instructors-title">Our Instructors</h2>
+          <p class="lead">Three teachers across Carnatic vocal and veena, from first lessons to advanced study.</p>
+        </div>
+        <div class="profiles" data-teachers data-variant="profile"></div>
+      </div>
+    </section>
+
+    <!-- 3. HOW OUR INSTRUCTORS TEACH -->
+    <section class="section section-brand" aria-labelledby="method-title">
+      <div class="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div class="flex flex-col items-start gap-5">
+          <span class="eyebrow">Teaching approach</span>
+          <h2 id="method-title">One method, three voices.</h2>
+          <p class="lead">Each teacher has a style. All of them share these habits.</p>
+        </div>
+        <div class="format-row md:!grid-cols-1 lg:!grid-cols-3">
+          <div><h3>Ear first</h3><p>Students hear and sing a phrase before they read or play it.</p></div>
+          <div><h3>Correction while it is fresh</h3><p>Pitch and gamaka are fixed in the lesson, not weeks later.</p></div>
+          <div><h3>Practice you can finish</h3><p>A short, specific task is set for each week.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ENQUIRY CTA -->
+    <section class="section section-alt" aria-labelledby="meet-title">
+      <div class="container-page">
+        <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+          <div class="flex max-w-xl flex-col items-start gap-4">
+            <span class="eyebrow">Meet your teacher</span>
+            <h2 id="meet-title">Not sure who to learn with?</h2>
+            <p class="lead">Tell us whether you want to sing or play the veena and your experience so far. We will suggest the best match.</p>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="contact.html">Send an Enquiry</a>
+            <a class="btn btn-secondary" href="courses.html">View Courses</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-component="footer"></div>
+</body>
+</html>

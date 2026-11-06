@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Sign In | NadaVeena Student Portal</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="dist/css/styles.css">
+  <script src="src/js/preinit.js"></script>
+  <script type="module" src="src/js/auth.js"></script>
+</head>
+<body class="auth-body">
+  <div class="auth-shell">
+
+    <!-- Brand panel: photograph, mark and a line of music. Banner on small screens. -->
+    <aside class="auth-media" aria-label="NadaVeena">
+      <img src="assets/images/photos/login-signin.jpg" alt="" width="1280" height="720" data-media="signin" data-active="true" style="object-position:50% 50%">
+      <img src="assets/images/photos/login-signup.jpg" alt="" width="1280" height="720" data-media="signup" style="object-position:50% 50%">
+      <div class="auth-brand" data-brand></div>
+      <p class="auth-quote">Every great raga begins with a single, steady note.</p>
+    </aside>
+
+    <div class="auth-panel">
+      <div class="auth-tools" data-auth-tools></div>
+
+      <div class="auth-card">
+
+        <!-- SIGN IN -->
+        <section class="auth-view" data-view="signin" aria-labelledby="signin-title">
+          <span class="eyebrow">Student portal</span>
+          <h1 id="signin-title" class="mt-3 text-h2" tabindex="-1">Welcome back</h1>
+          <p class="mt-2 text-muted">Sign in to see your classes, practice notes and payments.</p>
+
+          <form class="mt-8 flex flex-col gap-5" data-form="signin" novalidate>
+            <div class="field">
+              <label for="si-email">Email address</label>
+              <input class="input" id="si-email" name="email" type="email" dir="ltr" autocomplete="email" inputmode="email" placeholder="name@example.com" data-rule="email" required aria-required="true" aria-invalid="false">
+              <p class="field-error" data-error hidden></p>
+            </div>
+            <div class="field">
+              <div class="flex items-baseline justify-between gap-3">
+                <label for="si-password">Password</label>
+                <a class="text-small font-bold text-accent underline-offset-4 hover:underline" href="#forgot">Forgot password?</a>
+              </div>
+              <div class="pw">
+                <input class="input" id="si-password" name="password" type="password" dir="ltr" autocomplete="current-password" placeholder="Enter your password" data-rule="password" required aria-required="true" aria-invalid="false">
+                <button type="button" class="pw-btn" data-pw-toggle aria-pressed="false" aria-label="Show password" data-icon="eye"></button>
+              </div>
+              <p class="field-error" data-error hidden></p>
+            </div>
+            <label class="check"><input type="checkbox" name="remember"><span>Remember me on this device</span></label>
+            <p class="form-status" data-form-status role="alert" hidden></p>
+            <button class="btn btn-primary btn-lg w-full" type="submit">Sign In</button>
+          </form>
+
+          <div class="divider-text" role="separator"><span>or continue with</span></div>
+          <div class="grid grid-cols-2 gap-3" data-social></div>
+
+          <p class="mt-8 text-center text-muted">New to NadaVeena? <a class="font-bold text-accent underline-offset-4 hover:underline" href="#signup">Create an account</a></p>
+        </section>
+
+        <!-- CREATE ACCOUNT -->
+        <section class="auth-view" data-view="signup" aria-labelledby="signup-title" hidden>
+          <div data-signup-form>
+            <span class="eyebrow">Join the academy</span>
+            <h1 id="signup-title" class="mt-3 text-h2" tabindex="-1">Create your account</h1>
+            <p class="mt-2 text-muted">Set up your student account to follow your lessons and practice.</p>
+
+            <form class="mt-8 grid gap-5 sm:grid-cols-2" data-form="signup" novalidate>
+              <div class="field sm:col-span-2">
+                <label for="su-name">Full name</label>
+                <input class="input" id="su-name" name="name" type="text" autocomplete="name" placeholder="Your full name" data-rule="name" required aria-required="true" aria-invalid="false">
+                <p class="field-error" data-error hidden></p>
+              </div>
+              <div class="field">
+                <label for="su-email">Email address</label>
+                <input class="input" id="su-email" name="email" type="email" dir="ltr" autocomplete="email" inputmode="email" placeholder="name@example.com" data-rule="email" required aria-required="true" aria-invalid="false">
+                <p class="field-error" data-error hidden></p>
+              </div>
+              <div class="field">
+                <label for="su-phone">Phone number</label>
+                <input class="input" id="su-phone" name="phone" type="tel" dir="ltr" autocomplete="tel" inputmode="tel" placeholder="10-digit mobile number" data-rule="phone" required aria-required="true" aria-invalid="false">
+                <p class="field-error" data-error hidden></p>
+              </div>
+              <div class="field">
+                <label for="su-password">Password</label>
+                <div class="pw">
+                  <input class="input" id="su-password" name="password" type="password" dir="ltr" autocomplete="new-password" placeholder="At least 8 characters" data-rule="newPassword" required aria-required="true" aria-invalid="false" aria-describedby="su-strength">
+                  <button type="button" class="pw-btn" data-pw-toggle aria-pressed="false" aria-label="Show password" data-icon="eye"></button>
+                </div>
+                <div class="strength" id="su-strength" data-strength aria-live="polite"><span></span><span></span><span></span><span></span><em class="sr-only">Password strength</em></div>
+                <p class="field-error" data-error hidden></p>
+              </div>
+              <div class="field">
+                <label for="su-confirm">Confirm password</label>
+                <div class="pw">
+                  <input class="input" id="su-confirm" name="confirm" type="password" dir="ltr" autocomplete="new-password" placeholder="Repeat your password" data-rule="confirm" data-match="password" required aria-required="true" aria-invalid="false">
+                  <button type="button" class="pw-btn" data-pw-toggle aria-pressed="false" aria-label="Show password" data-icon="eye"></button>
+                </div>
+                <p class="field-error" data-error hidden></p>
+              </div>
+              <div class="field sm:col-span-2">
+                <label class="check"><input type="checkbox" name="terms" data-rule="terms" aria-invalid="false"><span>I agree to the <strong>Terms and Conditions</strong> and the <strong>Privacy Policy</strong>.</span></label>
+                <p class="field-error" data-error hidden></p>
+              </div>
+              <p class="form-status sm:col-span-2" data-form-status role="alert" hidden></p>
+              <button class="btn btn-primary btn-lg w-full sm:col-span-2" type="submit">Create Account</button>
+            </form>
+
+            <div class="divider-text" role="separator"><span>or sign up with</span></div>
+            <div class="grid grid-cols-2 gap-3" data-social></div>
+
+            <p class="mt-8 text-center text-muted">Already have an account? <a class="font-bold text-accent underline-offset-4 hover:underline" href="#signin">Sign in</a></p>
+          </div>
+
+          <div class="success-panel" data-signup-success tabindex="-1" hidden role="status">
+            <span class="success-mark" aria-hidden="true" data-icon="check"></span>
+            <h2 class="text-h3">Welcome, <span data-success-name></span>.</h2>
+            <p class="text-muted">Your student account is ready. Continue to your dashboard to see your classes and practice notes.</p>
+            <a class="btn btn-primary btn-lg w-full" href="dashboard.html">Continue to Dashboard</a>
+          </div>
+        </section>
+
+        <!-- FORGOT PASSWORD -->
+        <section class="auth-view" data-view="forgot" aria-labelledby="forgot-title" hidden>
+          <div data-forgot-form>
+            <span class="eyebrow">Password help</span>
+            <h1 id="forgot-title" class="mt-3 text-h2" tabindex="-1">Forgot your password?</h1>
+            <p class="mt-2 text-muted">Enter the email address on your account and we will help you set a new password.</p>
+            <form class="mt-8 flex flex-col gap-5" data-form="forgot" novalidate>
+              <div class="field">
+                <label for="fp-email">Email address</label>
+                <input class="input" id="fp-email" name="email" type="email" dir="ltr" autocomplete="email" inputmode="email" placeholder="name@example.com" data-rule="email" required aria-required="true" aria-invalid="false">
+                <p class="field-error" data-error hidden></p>
+              </div>
+              <p class="form-status" data-form-status role="alert" hidden></p>
+              <button class="btn btn-primary btn-lg w-full" type="submit">Send Reset Link</button>
+            </form>
+            <p class="mt-8 text-center"><a class="link-arrow" href="#signin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="rotate-180 rtl:rotate-0"><path d="M5 12h14M13 6l6 6-6 6"/></svg> Return to Sign In</a></p>
+          </div>
+          <div class="success-panel" data-forgot-success tabindex="-1" hidden role="status">
+            <span class="success-mark" aria-hidden="true" data-icon="mail"></span>
+            <h2 class="text-h3">Request received</h2>
+            <p class="text-muted">If <strong data-success-email class="break-all"></strong> is linked to a student account, you will receive instructions to reset your password.</p>
+            <a class="btn btn-secondary btn-lg w-full" href="#signin">Return to Sign In</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
